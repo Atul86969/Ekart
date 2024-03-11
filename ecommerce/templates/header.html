@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <!-- Headerr -->
+                <nav class="navbar  navbar-expand-lg  bg-body-tertiary" style="background-color:darkgray !important;">
+                    <div class="container-fluid"> <a class="navbar-brand" href="/product">E-kart</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/product">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/contact">Contact</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/user_logout">logout</a>
+                                </li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/user_login"> login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/register">Register</a>
+                                </li>
+                                {% endif %}
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/cart">cart</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+</body>
+
+</html>
